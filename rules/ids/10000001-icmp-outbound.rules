@@ -1,0 +1,12 @@
+# SID 10000001 — Outbound ICMP (ping) from HOME_NET to EXTERNAL_NET
+# Detects: reconnaissance / diagnostic ICMP traffic leaving the trusted network
+# ATT&CK: T1016.001 - Internet Connection Discovery
+#
+# This is the exact rule as deployed and tested (pfSense custom.rules,
+# ECORP interface). It omits the $ prefix on HOME_NET/EXTERNAL_NET and
+# a rev field; pfSense's Snort build accepted it and it fired correctly
+# against live test traffic (see results/test-results.md).
+alert icmp HOME_NET any -> EXTERNAL_NET any (msg:"Ping detected";sid:10000001)
+
+# Standard-practice variant (equivalent behavior, not yet re-tested):
+# alert icmp $HOME_NET any -> $EXTERNAL_NET any (msg:"Ping detected"; sid:10000001; rev:1;)

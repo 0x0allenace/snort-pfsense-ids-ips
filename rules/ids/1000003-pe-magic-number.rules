@@ -1,0 +1,6 @@
+# SID 1000003 — HTTP payload contains PE executable (DOS MZ magic number)
+# Detects: executables disguised with a non-.exe file extension
+# ATT&CK: T1036.008 - Masquerade File Type
+# Limitation: checks only the first 2 bytes of server (port 80) -> client payloads;
+#             misses packed, encoded, or archived payloads
+alert tcp any 80 -> any any (msg:"HTTP payload contains PE executable or DOS MZ magic number"; file_data; content:"|4D 5A|"; depth:2; sid:1000003; rev:1;)

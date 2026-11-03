@@ -1,0 +1,4 @@
+# SID 1000012 — HTTP URI containing .exe (IPS: drop + alert)
+# Paired with IDS SID 1000002 — same detection logic, blocking action.
+# Requires: pfSense Snort interface set to Inline IPS Mode.
+drop tcp any any -> any 80 (msg:"IPS: HTTP URI contains .exe - blocked"; flow:established,to_server; content:"|2e|exe"; nocase; http_uri; sid:1000012; rev:1;)

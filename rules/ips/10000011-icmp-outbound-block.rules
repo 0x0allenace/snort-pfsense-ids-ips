@@ -1,0 +1,8 @@
+# SID 10000011 — Outbound ICMP (IPS: drop + alert)
+# Paired with IDS SID 10000001 — same detection logic, blocking action.
+# Requires: pfSense Snort interface set to Inline IPS Mode.
+#
+# STATUS: not yet tested in the lab (no Blocked-tab evidence for this
+# SID). Only the MZ-signature IPS rule (SID 1000013) has confirmed
+# blocking evidence so far — see results/test-results.md.
+drop icmp $HOME_NET any -> $EXTERNAL_NET any (msg:"IPS: Outbound ping blocked"; sid:10000011; rev:1;)

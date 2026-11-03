@@ -1,0 +1,4 @@
+# SID 1000013 — PE / DOS MZ magic number (IPS: drop + alert)
+# Paired with IDS SID 1000003 — same detection logic, blocking action.
+# Requires: pfSense Snort interface set to Inline IPS Mode.
+drop tcp any 80 -> any any (msg:"IPS: HTTP content contains MZ signature - blocked"; flow:established,to_client; file_data; content:"|4D 5A|"; depth:2; sid:1000013; rev:1;)
