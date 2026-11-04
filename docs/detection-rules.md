@@ -8,9 +8,9 @@ The rules target outbound ICMP traffic, HTTP requests containing executable file
 
 | Detection | IDS SID | IPS SID | Detection Objective | MITRE ATT&CK | IDS confirmed | IPS confirmed |
 |---|---|---|---|---|---|---|
-| Outbound ICMP | 10000001 | 10000011 | Identify outbound ICMP traffic | T1016.001 — Internet Connection Discovery *(context-dependent)* | ✅ Yes | ✅ **Yes — confirmed blocked** |
-| HTTP `.exe` URI | 1000002 | 1000012 | Identify HTTP requests for executable filenames | T1105 — Ingress Tool Transfer | ✅ Yes | ✅ **Yes — confirmed blocked** |
-| PE / MZ signature | 1000003 | 1000013 | Identify HTTP file data containing the DOS MZ signature | T1036 — Masquerading *(context-dependent)* | — ✅ Yes | ✅ **Yes — confirmed blocked** |
+| Outbound ICMP | 10000001 | 10000011 | Identify outbound ICMP traffic | T1016.001 — Internet Connection Discovery *(context-dependent)* | ✅ Yes | ⏳ Not yet tested |
+| HTTP `.exe` URI | 1000002 | 1000012 | Identify HTTP requests for executable filenames | T1105 — Ingress Tool Transfer | ✅ Yes | ⏳ Not yet tested |
+| PE / MZ signature | 1000003 | 1000013 | Identify HTTP file data containing the DOS MZ signature | T1036 — Masquerading *(context-dependent)* | — *(IPS tested directly)* | ✅ **Yes — confirmed blocked** |
 
 > "Confirmed" means validated against a real pfSense Alerts/Blocked-tab screenshot, not just written and deployed. The ICMP IDS SID was corrected from `1000001` to `10000001` to match what was actually deployed and tested — see the note under SID 10000001 below.
 >
