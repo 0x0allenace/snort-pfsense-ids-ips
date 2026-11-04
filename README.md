@@ -101,7 +101,7 @@ See the full test matrix in [`results/test-results.md`](results/test-results.md)
 - Test the two remaining IPS rules (SID 10000011 ICMP, SID 1000012 `.exe` URI) the same way SID 1000013 was validated, and record the Blocked-tab evidence.
 - Add HTTPS/TLS-aware detection coverage (e.g. JA3/JA3S fingerprinting or a TLS-terminating proxy ahead of Snort).
 - Scope the PE-detection rule with `flow:` and content offsets to reduce the chance of missing non-zero-offset payloads.
-- Forward Snort alerts to a SIEM (e.g. Splunk, Elastic, or Wazuh) for centralized correlation — see my related [Email Conversation Integrity Detection](#) project, which already has a SIEM integration layer this could feed into.
+- Forward Snort alerts to a SIEM (e.g. Splunk, Elastic, or Wazuh) for centralized correlation — see my related [Email Conversation Integrity Detection](https://github.com/0x0allenace/email-conversation-integrity-detection) project, which already has a SIEM integration layer this could feed into.
 
 ---
 

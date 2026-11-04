@@ -54,12 +54,3 @@ pfSense's Snort Interfaces overview page (**Services → Snort → Snort Interfa
 
 > **Confirmed:** the ECORP interface is set to **Inline IPS Mode**. The SID 1000013 block event (see [`../results/test-results.md`](../results/test-results.md)) is therefore a true per-packet `drop` — Snort blocked only the matching HTTP response, not the whole host.
 
-## Versions
-
-| Item | Version |
-|---|---|
-| pfSense | _fill in_ |
-| Snort package | _fill in_ |
-| Ruleset | Custom rules only (`custom.rules` category) |
-
-> Fill in the exact pfSense and Snort package versions used before publishing, for reproducibility.
